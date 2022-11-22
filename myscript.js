@@ -17,26 +17,40 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 
 
 /* Chiedo distanza da percorrere ed età mediante il form nell'html */
-const distance = parseInt(document.querySelector('input#km')) ;
-console.log(distance);
+const distance = parseInt(document.getElementById('km')) ;
 
-const yourAge = parseInt(document.querySelector('input#age'));
 
-/* Prezzo del biglietto (escludendo sconti) */
-let ticketPrice = distance * 0.2762 ;
-
-/* Calcolo scontistiche */
-const youngDiscount = ticketPrice - (ticketPrice * 17.5 / 100);
-const overDiscount = ticketPrice - (ticketPrice * 33.3 / 100);
+const yourAge = document.getElementById('age');
 
 /* Immetto il button nel js come variabile fissa per generare evento */
-const button = document.querySelector('.btn');
+const button = document.getElementById('button');
+
+
+
+
+/* Calcolo prezzo e scontistiche */
+let ticketPrice;
+const youngDiscount = ticketPrice - (ticketPrice * 17.5 / 100);
+const overDiscount = ticketPrice - (ticketPrice * 33.3 / 100);
+ 
 
 /* Genera evento compreso l'if */
 button.addEventListener('click', function(){
-    console.log('3')
+    let ticketPrice = distance * 0.2762 ;
+    console.log(ticketPrice);
+    console.log(distance.value);
+    console.log(yourAge.value);
 
+    if (yourAge <= 17) {
+        console.log(youngDiscount);
+    } else if (yourAge >= 65) {
+        console.log(overDiscount);
+    } else ticketPrice = distance * 0.2762;
 })
+    
+
+    
+
 
 
 
