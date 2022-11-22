@@ -28,12 +28,6 @@ const button = document.getElementById('button');
 
 
 
-/* Calcolo prezzo e scontistiche */
-let ticketPrice;
-const youngDiscount = ticketPrice - (ticketPrice * 17.5 / 100);
-const overDiscount = ticketPrice - (ticketPrice * 33.3 / 100);
- 
-
 /* Genera evento compreso l'if */
 button.addEventListener('click', function(){
     let ticketPrice = distance * 0.2762 ;
@@ -42,12 +36,25 @@ button.addEventListener('click', function(){
     console.log(yourAge.value);
 
     if (yourAge <= 17) {
+        let youngDiscount = ticketPrice - (ticketPrice * 17.5 / 100);
         console.log(youngDiscount);
+
     } else if (yourAge >= 65) {
+        let overDiscount = ticketPrice - (ticketPrice * 33.3 / 100);
         console.log(overDiscount);
-    } else ticketPrice = distance * 0.2762;
+
+    } else {
+        ticketPrice = distance * 0.2762;
+        console.log(ticketPrice);
 })
+
+
     
+
+
+
+ 
+
 
     
 
