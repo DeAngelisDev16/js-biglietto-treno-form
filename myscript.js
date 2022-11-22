@@ -20,7 +20,7 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 const distance = parseInt(document.getElementById('km')) ;
 
 
-const yourAge = document.getElementById('age');
+const yourAge = parseInt (document.getElementById('age'));
 
 /* Immetto il button nel js come variabile fissa per generare evento */
 const button = document.getElementById('button');
@@ -43,10 +43,12 @@ button.addEventListener('click', function(){
         let overDiscount = ticketPrice - (ticketPrice * 33.3 / 100);
         console.log(overDiscount);
 
-    } else {
+    } else{
         ticketPrice = distance * 0.2762;
         console.log(ticketPrice);
-})
+
+    }
+}) 
 
 
     
